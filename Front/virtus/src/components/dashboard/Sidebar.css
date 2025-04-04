@@ -1,0 +1,224 @@
+/* Sidebar.css - Diseño renovado */
+.sidebar {
+    width: 280px;
+    height: 100vh;
+    background: linear-gradient(to bottom, #2c3e50, #1a252f);
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.sidebar.collapsed {
+    width: 70px;
+}
+
+/* Logo o nombre del sistema */
+.sidebar-header {
+    padding: 20px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    padding: 0 15px;
+}
+
+.sidebar li {
+    margin: 5px 0;
+    position: relative;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.sidebar li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    width: 100%;
+    transition: all 0.2s ease;
+}
+
+.sidebar .sidebar-icon {
+    font-size: 18px;
+    min-width: 25px;
+    display: flex;
+    justify-content: center;
+    color: #3498db;
+    transition: all 0.3s ease;
+}
+
+.sidebar li:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+    border-left: 3px solid #3498db;
+}
+
+.sidebar li:hover .sidebar-icon {
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.sidebar li span {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    margin-left: 15px;
+    font-weight: 400;
+    opacity: 1;
+}
+
+.sidebar.collapsed li span {
+    opacity: 0;
+    visibility: hidden;
+    width: 0;
+}
+
+/* Tooltip para cuando está colapsado */
+.sidebar.collapsed li:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 75px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #3498db;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+    font-size: 14px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    font-weight: 500;
+}
+
+.sidebar.collapsed li:hover::before {
+    content: '';
+    position: absolute;
+    left: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-style: solid;
+    border-width: 6px 6px 6px 0;
+    border-color: transparent #3498db transparent transparent;
+}
+
+/* Separador */
+.separator {
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+    margin: 10px 15px;
+}
+
+/* Botón de colapsar */
+.toggle-btn {
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar.collapsed .toggle-btn {
+    transform: rotate(180deg);
+    margin: 10px auto;
+}
+
+.toggle-btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.1);
+}
+
+.sidebar.collapsed .toggle-btn:hover {
+    transform: scale(1.1) rotate(180deg);
+}
+
+/* Flecha de menús desplegables */
+.arrow-icon {
+    margin-left: auto;
+    font-size: 12px;
+    transition: transform 0.3s ease;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Submenús */
+.submenu {
+    list-style: none;
+    padding-left: 15px !important;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.15);
+    border-left: 2px solid #3498db;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+}
+
+.submenu.open {
+    max-height: 200px;
+}
+
+.submenu li {
+    margin: 0;
+    border-left: none !important;
+}
+
+.submenu li a {
+    padding: 10px 15px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.submenu li:hover {
+    background-color: rgba(52, 152, 219, 0.15);
+    border-left: none !important;
+}
+
+/* Estilos de ítem activo */
+.sidebar li.active {
+    background-color: rgba(52, 152, 219, 0.2);
+    border-left: 3px solid #3498db;
+}
+
+.sidebar li.active .sidebar-icon,
+.sidebar li.active a {
+    color: #3498db;
+    font-weight: 500;
+}
