@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; // Usamos Link en lugar de window.location.href
-import '../styles/App.css'; // Estilos generales de la aplicación
-import logo from '../assets/logo.png'; // Ruta al logo (cámbiala si es necesario)
+import '../../styles/App.css'; // Estilos generales de la aplicación
+import logo from '../../assets/logo.png'; // Ruta al logo (cámbiala si es necesario)
 
 function RecuperarContraseña() {
   const [email, setEmail] = useState('');

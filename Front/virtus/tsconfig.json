@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es5",                     // Compilación a ES5 para compatibilidad
+    "lib": ["dom", "es2015"],            // Agrega las bibliotecas necesarias
+    "jsx": "react-jsx",
+    "moduleResolution": "node",          // Resolución de módulos al estilo de Node.js
+    "esModuleInterop": true,             // Interoperabilidad entre módulos ES6 y CommonJS
+    "allowJs": true,                     // Permite archivos .js en el proyecto
+    "skipLibCheck": true,                // Salta la comprobación de tipos en archivos de declaración
+    "strict": false,                      // Habilita todas las comprobaciones estrictas
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "src/**/*"                           // Incluye todos los archivos dentro de src/
+  ],
+  "exclude": [
+    "node_modules"                       // Excluye node_modules
+  ]
+}

@@ -1,143 +1,56 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Ajustes generales */
+/* Ajustes generales */
 .App {
   height: 100vh;
-  display: flex;
   justify-content: center;
   align-items: center;
-  /* position: relative; */
-  overflow: hidden; /* Evita el desbordamiento */
+  position: relative;
+  overflow: hidden; /* Para que no haya desbordamientos */
 }
 
+/* Fondo difuso */
 .App::before {
-  content: ''; /* Pseudo-elemento vacío */
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url(../assets/fondo2.png); /* Imagen de fondo */
-  /*background-color: #ffffff;*/
-  background-size: cover; /* Asegura que la imagen cubra toda el área */
-  background-position: center; /* Centra la imagen de fondo */
-  background-repeat: no-repeat; /* Evita la repetición de la imagen */
-  filter: blur(2px); /* Difumina solo la imagen de fondo */
-  z-index: -1; /* Asegura que el fondo se mantenga detrás del contenido */
+  background-image: url(../assets/fondo2.png); /* Fondo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(5px); /* Se reduce el efecto blur para mejorar la visibilidad */
+  z-index: -1; /* Mantiene el fondo detrás del contenido */
 }
 
 
+/* Login Formulario */
 .login-container {
-  position: relative; /* Necesario para el pseudo-elemento */
+  position: relative;
   border-radius: 10px;
   padding: 30px;
-  width: 650px; /* Ancho del contenedor ajustado */
-  height: 400px; /* Altura del contenedor ajustada */
+  width: 650px;
+  height: 400px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; /* Centra los elementos dentro del contenedor */
+  align-items: center;
   overflow: hidden;
 }
 
+/* Fondo difuso del login */
 .login-container::before {
-  content: ''; /* Pseudo-elemento vacío */
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  /*background-image: url(../assets/fondoLogin.png); /* Imagen de fondo */
   background-color: #ffffff;
-  background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
-  background-position: center; /* Centra la imagen dentro del contenedor */
-  background-repeat: no-repeat;
-  opacity: 0.95; /* Opacidad de la imagen, ajusta esto como lo necesites */
-  z-index: -1; /* Asegura que la imagen esté detrás del contenido */
-}
-
-
-
-
-
-
-.logo {
-  width: 140px; /* Ajusta el tamaño del logo */
-  margin-bottom: 20px; /* Separación para el logo */
-}
-
-.login-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centra los elementos dentro del formulario */
-  justify-content: center;
-  width: 100%;
-  gap: 10px; /* Espacio entre los elementos */
-}
-
-input {
-  margin: 10px 0;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 14px;
-  width: 90%; /* Hace que los campos de entrada se ajusten al 90% del contenedor */
-  max-width: 400px; /* Limita el ancho máximo de los inputs */
-}
-
-button {
-  padding: 12px;
-  background-color: #A4B300; /* Color verde para el botón */
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin: 10px 0;
-  font-size: 14px;
-  width: 90%; /* Hace que el botón ocupe el 90% del contenedor */
-  max-width: 400px; /* Limita el ancho máximo del botón */
-}
-
-button:hover {
-  background-color: #6fa76e; /* Color más oscuro para el hover */
-}
-
-.links a {
-  color: #7abf7f;
-  font-size: 14px;
-  margin-top: 10px;
-  display: block;
-}
-
-.alert {
-  background-color: #f4f4f4;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  width: 300px;
-  margin-top: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.alert p {
-  margin-bottom: 20px;
-}
-
-.alert button {
-  padding: 12px;
-  background-color: #A4B300;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.alert button:hover {
-  background-color: #6fa76e;
+  opacity: 0.95;
+  z-index: -1;
 }
