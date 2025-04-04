@@ -1,9 +1,9 @@
-/* Sidebar.css - Diseño renovado */
+/* Sidebar.css - Armonía de colores renovada */
 .sidebar {
     width: 280px;
     height: 100vh;
-    background: linear-gradient(to bottom, #2c3e50, #1a252f);
-    color: #fff;
+    background: #F7F9EB; /* Cambiado a blanco hueso para un fondo más suave */
+    color: #526C17; /* Verde oscuro para texto principal */
     position: fixed;
     top: 0;
     left: 0;
@@ -11,10 +11,10 @@
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease;
-    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
     scrollbar-width: thin;
-    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+    scrollbar-color: #B0B0B0 transparent;
 }
 
 .sidebar::-webkit-scrollbar {
@@ -22,7 +22,7 @@
 }
 
 .sidebar::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: #B0B0B0;
     border-radius: 10px;
 }
 
@@ -36,7 +36,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid #B0B0B0;
+    color: #7C8A2E; /* Verde oliva para el título */
+    font-weight: bold;
 }
 
 .sidebar ul {
@@ -62,7 +64,7 @@
 }
 
 .sidebar li a {
-    color: #ecf0f1;
+    color: #526C17; /* Verde oscuro para texto de enlaces */
     text-decoration: none;
     font-size: 15px;
     display: flex;
@@ -77,17 +79,17 @@
     min-width: 25px;
     display: flex;
     justify-content: center;
-    color: #3498db;
+    color: #A4B300; /* Verde amarillento para iconos */
     transition: all 0.3s ease;
 }
 
 .sidebar li:hover {
-    background-color: rgba(52, 152, 219, 0.1);
-    border-left: 3px solid #3498db;
+    background-color: rgba(164, 179, 0, 0.1); /* Fondo hover con transparencia */
+    border-left: 3px solid #A4B300;
 }
 
 .sidebar li:hover .sidebar-icon {
-    color: #fff;
+    color: #7C8A2E; /* Verde oliva al hacer hover */
     transform: translateY(-2px);
 }
 
@@ -111,8 +113,8 @@
     left: 75px;
     top: 50%;
     transform: translateY(-50%);
-    background: #3498db;
-    color: #fff;
+    background: #A4B300;
+    color: #FFFFFF;
     padding: 8px 12px;
     border-radius: 4px;
     white-space: nowrap;
@@ -130,20 +132,20 @@
     transform: translateY(-50%);
     border-style: solid;
     border-width: 6px 6px 6px 0;
-    border-color: transparent #3498db transparent transparent;
+    border-color: transparent #A4B300 transparent transparent;
 }
 
 /* Separador */
 .separator {
     height: 1px;
-    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+    background: linear-gradient(to right, transparent, #B0B0B0, transparent);
     margin: 10px 15px;
 }
 
 /* Botón de colapsar */
 .toggle-btn {
-    background-color: #3498db;
-    color: #ffffff;
+    background-color: #7C8A2E;
+    color: #FFFFFF;
     border: none;
     width: 32px;
     height: 32px;
@@ -163,7 +165,7 @@
 }
 
 .toggle-btn:hover {
-    background-color: #2980b9;
+    background-color: #A4B300;
     transform: scale(1.1);
 }
 
@@ -176,7 +178,7 @@
     margin-left: auto;
     font-size: 12px;
     transition: transform 0.3s ease;
-    color: rgba(255, 255, 255, 0.5);
+    color: #7C8A2E;
 }
 
 /* Submenús */
@@ -184,8 +186,8 @@
     list-style: none;
     padding-left: 15px !important;
     margin: 0;
-    background-color: rgba(0, 0, 0, 0.15);
-    border-left: 2px solid #3498db;
+    background-color: rgba(247, 249, 235, 0.6); /* Fondo más claro para submenús */
+    border-left: 2px solid #7C8A2E;
     overflow: hidden;
     max-height: 0;
     transition: max-height 0.3s ease;
@@ -203,22 +205,22 @@
 .submenu li a {
     padding: 10px 15px;
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.8);
+    color: #526C17; /* Verde oscuro para texto de submenús */
 }
 
 .submenu li:hover {
-    background-color: rgba(52, 152, 219, 0.15);
+    background-color: rgba(164, 179, 0, 0.15);
     border-left: none !important;
 }
 
 /* Estilos de ítem activo */
 .sidebar li.active {
-    background-color: rgba(52, 152, 219, 0.2);
-    border-left: 3px solid #3498db;
+    background-color: rgba(124, 138, 46, 0.15); /* Verde oliva con transparencia */
+    border-left: 3px solid #0A5127; /* Verde bosque para el indicador activo */
 }
 
 .sidebar li.active .sidebar-icon,
 .sidebar li.active a {
-    color: #3498db;
+    color: #0A5127; /* Verde bosque para texto e iconos activos */
     font-weight: 500;
 }
